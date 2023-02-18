@@ -1,0 +1,119 @@
+﻿
+
+@model MK_Core_MVC.Models.Employee
+
+<style>
+    body{
+        background: url('@Url.Content("~/css/image/images.jpg")');
+        background-size:1830px,100px;
+    }
+    .back{
+        background: url('@Url.Content("~/css/image/pic3.jpg")');
+    }  
+    .Mk{
+        border: 2Px solid black;
+        width:30%;
+    }   
+    .sk{
+        border: 2Px solid black;
+        background-color:lightcoral;
+    }
+</style>
+ 
+
+<partial name="Session">
+
+<div class="Mk">
+
+<div class="sk">
+<center>
+<h3><b>Add Employee</b></h3>
+</center>
+</div>
+
+<form class="back" asp-action="AddEmp" asp-controller="Home" method="post">
+
+<input asp-for="Id" type="hidden"/>
+
+<div class="form-group">
+    <h5><label>Name</label></h5>
+    <input asp-for="Name" class="form-control" type="text"  />
+    <span class="text-danger" asp-validation-for="Name"></span>
+</div>
+
+<div class="form-group ">
+    <h5><label>Age</label></h5>
+    <input asp-for="Age" class="form-control" type="text"  />
+    <span class="text-danger" asp-validation-for="Age"></span>
+</div>
+
+<div class="form-group ">
+    <h5><label>DOB</label></h5>
+    <input asp-for="Date" class="form-control  type="date" />
+    <span class="text-danger" asp-validation-for="Date"></span>
+</div>
+
+<div class="form-group ">
+    <h5><label>Email</label></h5>
+    <input asp-for="Email" class="form-control  type="text"  />
+    <span class="text-danger" asp-validation-for="Email"></span>
+</div>
+
+<div class="form-group ">
+    <h5><label>Phone</label></h5>
+    <input asp-for="Phone" class="form-control  type="text" />
+    <span class="text-danger" asp-validation-for="Phone"></span>
+</div>
+
+<div class="form-group ">
+    <h5><label>Address</label></h5>
+    <input asp-for="Address" class="form-control  type="text"  />
+    <span class="text-danger" asp-validation-for="Address"></span>
+</div>
+
+<div class="form-group ">
+    <h5><label>ZipCode</label></h5>
+    <input asp-for="ZipCode" class="form-control type="text"  />
+    <span class="text-danger" asp-validation-for="ZipCode"></span>
+</div>
+
+<div class="form-group ">
+    <h5><label>Company</label></h5>
+    <input asp-for="Company" class="form-control  type="text"  />
+    <span class="text-danger" asp-validation-for="Company"></span>
+</div>
+
+<div class="form-group ">
+    <h5><label>City</label></h5>
+    <input asp-for="City" class="form-control type="text"  />
+    <span class="text-danger" asp-validation-for="City"></span>
+</div>
+
+<div class="form-group ">
+    <h5> <label>Department</label></h5>
+    <input asp-for="Department" class="form-control type="text" />
+    <span class="text-danger" asp-validation-for="Department"></span>
+</div>
+
+<div class="form-group">
+    <h5><label>Selary</label></h5>
+    <input asp-for="Selary" class="form-control type="text"  />
+    <span class="text-danger" asp-validation-for="Selary"></span>
+</div>
+
+<center>
+<button class="btn btn-success" type="submit">Submit Form</button>
+<button class="btn btn-danger" type="reset">Reset</button>
+</center>
+
+</form>
+</div>
+ 
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+

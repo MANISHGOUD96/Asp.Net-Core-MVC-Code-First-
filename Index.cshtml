@@ -1,0 +1,69 @@
+﻿@model List<MK_Core_MVC.Models.Employee>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+     body{
+        background: url('@Url.Content("~/css/image/pic4.jpg")');
+       background-size:1200px,10px 
+    }
+    
+    .mk{
+        border:2px solid black;
+    }
+    .th{
+        background-color:hotpink
+    }
+    .tr{
+        background-color:lemonchiffon
+    }
+    body{
+        background-color: darkgrey;
+    }
+
+</style>
+
+
+<partial name="Session">
+
+    <h1 style="color:antiquewhite"><u>Employee Details:-</u></h1>
+
+    <table class="table table-bordered table-hover table-responsive mk">
+        <tr class="th">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age </th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>ZipCode</th>
+        <th>Company</th>
+        <th>City</th>
+        <th>Department</th>                        
+        <th>Selary</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="tr">
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.Date.Date.ToShortDateString()</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.Address</td>
+            <td>@item.ZipCode</td>
+            <td>@item.Company</td>
+            <td>@item.City</td>
+            <td>@item.Department</td>
+            <td>@item.Selary</td>
+            <td><a class="btn btn-success" asp-action="Edit" asp-controller="Home" asp-route-Id="@item.Id">Edit</a></td>
+            <td><a class="btn btn-danger" asp-action="Delete" asp-controller="Home" asp-route-Id="@item.Id">Delete</a></td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,58 @@
+﻿
+@model MK_Core_MVC.Models.Login
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    body{
+        background: url('@Url.Content("~/css/image/pic1.jpg")');
+        background-size:1300px,10px
+    }
+    .sk{
+        border: 2Px solid black;
+        width:30%;
+        background-color: bisque;
+    }
+</style>
+
+<partial name="Session">
+<div class="sk">
+
+<center>
+<h3><b> User Login</b></h3>
+</center>
+<hr/>
+
+<form asp-action="Login" asp-controller="Home" method="post">
+
+<div class="form-group">
+    <h5><label>Email</label></h5>
+    <input asp-for="Email" class="form-control" type="text" />
+    <span class="text-danger" asp-validation-for="Email"></span>
+    <h6 style="color:red">@HttpContextAccessor.HttpContext.Session.GetString("Email")</h6>   
+</div>
+
+<div class="form-group">
+    <h5><label>Password</label></h5>
+    <input asp-for="password" class="form-control" type="password"/>
+    <span class="text-danger" asp-validation-for="password"></span>
+    <h6 style="color:red">@HttpContextAccessor.HttpContext.Session.GetString("Password")</h6>
+</div>
+
+<center>
+<button class="btn btn-success" type="submit">Login</button>
+<button class="btn btn-danger" type="reset">Reset</button>
+</center>
+
+</form>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
